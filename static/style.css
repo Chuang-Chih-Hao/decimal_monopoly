@@ -1,0 +1,29 @@
+body { font-family: '微軟正黑體', sans-serif; display: flex; flex-direction: column; align-items: center; }
+#gameUI { display: flex; gap: 20px; margin-top: 20px; }
+#board {
+    display: grid;
+    grid-template-columns: repeat(6, 80px);
+    grid-template-rows: repeat(6, 80px);
+    gap: 5px;
+    background-color: #333;
+    padding: 5px;
+}
+.cell {
+    background: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+}
+/* 定義外圈的 CSS Grid 位置，跳過中間鏤空 */
+.cell[data-id="0"] { grid-area: 6 / 1 / 7 / 2; background: #ffcccc; }
+/* ... (可依序定義 1~19 格的 grid-area 來圍繞一圈) ... */
+
+#questionModal {
+    position: fixed; top: 30%; left: 50%; transform: translate(-50%, -50%);
+    background: white; padding: 20px; border: 3px solid #e74c3c; border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5); z-index: 100;
+}
